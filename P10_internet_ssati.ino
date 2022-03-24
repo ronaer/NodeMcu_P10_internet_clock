@@ -2,6 +2,7 @@
   P1016*32 Led Matrix ile nternetten saat bilgisi çekilerek yapılan saat
   Internet Clock for P10 Led Matrix 16x32
   TR/izmir/ Mart/2022/ by Dr.TRonik YouTube
+  https://youtu.be/og6G_DqZoOQ
 
   Hardware Connections:
  ------IDC16 IN------

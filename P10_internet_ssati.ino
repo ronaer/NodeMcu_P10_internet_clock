@@ -4,17 +4,17 @@
   TR/izmir/ Mart/2022/ by Dr.TRonik YouTube
   https://youtu.be/og6G_DqZoOQ
 
-  Hardware Connections:
- ------IDC16 IN------
-  D8  |1|   |2|  D0
-  Gnd |3|   |4|  D6
-  Gnd |5|   |6|  X
-  Gnd |7|   |8|  D5
-  Gnd |9|   |10| D3
-  Gnd |11|  |12| D7
-  Gnd |13|  |14| X
-  Gnd |15|  |16| X
-  -------------------
+ P10 MonoColor Hardware Connections:
+            ------IDC16 IN------
+  CS/GPIO15/D8  |1|   |2|  D0/GPIO16
+            Gnd |3|   |4|  D6/GPIO12/MISO
+            Gnd |5|   |6|  X
+            Gnd |7|   |8|  D5/GPIO14/CLK
+            Gnd |9|   |10| D3/GPIO0
+            Gnd |11|  |12| D7/GPIO13/MOSI
+            Gnd |13|  |14| X
+            Gnd |15|  |16| X
+            --------------------
 *******************************************************************************/
 
 /********************************************************************
@@ -55,7 +55,7 @@ DMDESP Disp(DISPLAYS_WIDE, DISPLAYS_HIGH); //Bir panel kullanıldı...
 //Zaman intervalleri
 #define NTP_OFFSET   60 * 60      // In seconds
 #define NTP_INTERVAL 300 * 1000    // In miliseconds, 5dk da bir güncelleme
-#define NTP_ADDRESS  "north-america.pool.ntp.org"  // change this to whatever pool is closest (see ntp.org)
+#define NTP_ADDRESS  "north-america.pool.ntp.org"  // Uygun zaman sunucusu ile değiştirebilirsiniz (ntp.org)
 
 WiFiServer server(SERVER_PORT);
 
@@ -115,7 +115,7 @@ void loop() {
   set_bright();
   Disp.setBrightness(p10_Brightness);
   Disp.setFont(SystemFont5x7);
-  //Saniye efekti
+  //Saniye efekti__________________
   if (millis() / 1000 % 2 == 0) // her 1 saniye için
   {
     Disp.drawChar(14, 5, ':'); //iki noktayı göster
@@ -124,9 +124,9 @@ void loop() {
   {
     Disp.drawChar(14, 5, ' '); // gösterme
   }
-  //Saniye efekti sonu
+  //Saniye efekti sonu_______________
 
-  //Sabit saniye için:
+  //Sabit saniye için:( efekt kodu inaktive edilerek)
   //  Disp.drawChar(14, 5, ':');
   //Sabit saniye efekti sonu
 
@@ -186,27 +186,18 @@ void loop() {
 
     saat0 = String (saat);
     if (saat < 10) {
-      saat0 = (" ") + (saat0) ;
-
+     saat0 = ("0") + (saat0) ;
     }
+    
     else {
       saat0 = saat0;
     }
+ }// End of the millis...
 
-
-
-  }// End of the millis...
-
-  if (saat < 10) {
-    Disp.drawText(6, 1, String(saat0));
-  }
-  else {
     Disp.drawText(0, 1, String(saat0));
-  }
-
-  Disp.drawText(19, 1, String(dakika0));
+    Disp.drawText(19, 1, String(dakika0));
   // Serial.println(saat);
-  //  Serial.println(saat0);
+  // Serial.println(saat0);
 
 }//End of the lllloooopppp
 

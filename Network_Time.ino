@@ -75,7 +75,7 @@ time_t local, utc;
 bool connected = false;
 unsigned long last_second;
 
-int  p10_Brightness ;
+int  p10_Brightness ; //Gerekirse saat değişkenine göre parlaklık ayarlamak için...
 int saat, dakika, saniye, gun, ay, yil ; //Local değişkenler
 String saat0, dakika0, saniye0, gun0, ay0 ; // String değişkenleri
 
@@ -259,16 +259,11 @@ void loop() {
   Disp.drawChar(18, -1, '.' );
   Disp.drawChar(33, -1, '.' );
 
-  Disp.setFont(angka_2);
-
-
-
-
 }//End of the loooop
 
 /********************************************************************
   VOIDs__VOIDs__VOIDs__VOIDs__VOIDs__VOIDs__VOIDs__VOIDs__VOIDs__VOIDs
 ********************************************************************/
-
+// No Extra Void...
 
 //DR.TRonik >>> YouTube

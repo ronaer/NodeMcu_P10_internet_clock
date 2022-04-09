@@ -2,6 +2,7 @@
   P1016*32 Led Matrix ile nternetten saat bilgisi çekilerek yapılan saat,takvim ve derece
   Internet Clock, calendar, temp, hum display for P10 Led Matrix 16x32 + esp3266 
   TR/izmir/ Nisan/2022/ by Dr.TRonik YouTube
+  https://youtu.be/J7IC-6vfrRw
 
     P10 (MonoColor) Hardware Connections:
             ------IDC16 IN------                      ------DHT11------

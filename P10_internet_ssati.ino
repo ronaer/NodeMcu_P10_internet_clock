@@ -55,7 +55,7 @@ DMDESP Disp(DISPLAYS_WIDE, DISPLAYS_HIGH); //Bir panel kullanıldı...
 //Zaman intervalleri
 #define NTP_OFFSET   60 * 60      // In seconds
 #define NTP_INTERVAL 300 * 1000    // In miliseconds, 5dk da bir güncelleme
-#define NTP_ADDRESS  "north-america.pool.ntp.org"  // Uygun zaman sunucusu ile değiştirebilirsiniz (ntp.org)
+#define NTP_ADDRESS  "tr.pool.ntp.org"  // The nearest ntp pool; "north-america.pool.ntp.org" or "asia.pool.ntp.org" etc...
 
 WiFiServer server(SERVER_PORT);
 
@@ -225,4 +225,8 @@ int set_bright () {
   return p10_Brightness;
   //  Disp.setBrightness(p10_Brightness);
 }
-//Dr.TRonik YouTube
+
+/* email:bilgi@ronaer.com
+   insta: https://www.instagram.com/dr.tronik2022/
+   YouTube: Dr.TRonik: www.youtube.com/c/DrTRonik
+*/
